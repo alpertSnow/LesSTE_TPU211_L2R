@@ -78,6 +78,17 @@ xy.mesh <- mesh(x.block, y.block)
 x.mesh <- as.vector(xy.mesh$x)
 y.mesh <- as.vector(xy.mesh$y)
 
+### reshape data
+m.HPD <- melt(HPD)
+## count x first, then count y
+
+xv <- rep(xc, times = nj)
+yv <- rep(yc, each = ni)
+w <- rep(dx, times = nj)
+h <- rep(dy, each = ni)
+m.prob <- melt(probMat)/w/h
+#m.prob0 <- melt(prob0)
+
 ## output 3-column csv
 HPD_DF <- data.frame(x=xv,y=yv,value=m.HPD$value)
 write.csv(HPD_DF,'L2R_HPD.csv', row.names = FALSE)

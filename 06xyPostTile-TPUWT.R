@@ -2,16 +2,7 @@
 ### date: 2017-05-01
 library(RColorBrewer)
 library(ggplot2)
-### reshape data
-m.HPD <- melt(HPD)
-## count x first, then count y
 
-xv <- rep(xc, times = nj)
-yv <- rep(yc, each = ni)
-w <- rep(dx, times = nj)
-h <- rep(dy, each = ni)
-m.prob <- melt(probMat)/w/h
-#m.prob0 <- melt(prob0)
 
 ### contour plot of HPD
 ### pxls: 1200*1000
