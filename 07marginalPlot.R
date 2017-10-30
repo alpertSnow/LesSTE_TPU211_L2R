@@ -43,7 +43,7 @@ yMargin.plot <- ggplot(data = NULL, aes(x = yc, y = j.prob/dy)) +
         theme(plot.margin = margin(l=0.5, b=0.5,r=1, t=0.5, unit='cm'))+
         theme(axis.text = element_text(colour = 'black'))
 
-breaks <- 2000
+breaks <- 200
 qHist <- hist(mcmc$q, breaks = breaks)
 q.est <- mean(mcmc$q)
 q.grid <- qHist$mids
@@ -62,7 +62,8 @@ q.plot <- ggplot(data = NULL) +
         theme(plot.margin = margin(l=0.5, b=0.5,r=1, t=0.5, unit='cm'))+
         theme(axis.ticks = element_line(size = 1.2))+
         geom_vline(xintercept = q.real*0.35, colour = 'red', size=1.2, lty =2)+
-        geom_vline(xintercept = q.est*0.35, colour = 'black', size=1.2, lty =1)+
+        geom_vline(xintercept = 1.26*0.35, colour = 'black', size=1.2, lty =1)+
+#        geom_vline(xintercept = q.est*0.35, colour = 'black', size=1.2, lty =1)+
         theme(axis.text = element_text(colour = 'black'))
         #geom_vline(xintercept = q.xs.wt, colour = 'blue', size=1.2, lty =5)
 

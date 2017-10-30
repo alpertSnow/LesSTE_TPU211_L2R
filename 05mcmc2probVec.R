@@ -1,4 +1,5 @@
 library(plot3D)
+library(reshape2)
 ### mcmc to probVec
 mcmc <- data.frame(sf.sim$BUGSoutput$sims.list)
 n.mcmc <- dim(mcmc)[1]
